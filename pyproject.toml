@@ -42,7 +42,10 @@ quote-style = 'single'
 
 [tool.pytest.ini_options]
 pythonpath = "."
-addopts = '-p no:warnings'
+addopts = '-s -x --cov=fastapi_zero -vv'
+filterwarnings = [
+    "ignore::ResourceWarning",
+]
 
 [tool.taskipy.tasks]
 lint = 'ruff check'
